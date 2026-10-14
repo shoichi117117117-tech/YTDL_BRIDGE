@@ -22,7 +22,8 @@ ytdl-bridge/
 ├── .gitignore              # Ignores local configs, logs, and virtual environments
 ├── local_config.example.ps1# Template for machine-specific paths
 └── scripts/
-  └── download_single.ps1 # Handles single URL downloads, archive checks, and script triggering
+  ├── download_single.ps1 # Handles single URL downloads, archive checks, and script triggering
+  └── stacher_import.ps1  # Handles beets import and metadata cleanup
 ```
 
 ---
