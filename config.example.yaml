@@ -1,0 +1,110 @@
+directory: /path/to/your/music/library
+library: ~/.config/beets/library.db
+
+plugins:
+  - chroma
+  - lyrics
+  - fetchart
+  - embedart
+  - ftintitle
+  - scrub
+  - info
+  - musicbrainz
+  - lastgenre
+  - edit
+
+edit:
+  editor: notepad.exe
+
+lastgenre:
+  auto: yes
+  canonical: yes
+  fallback: Pop
+
+import:
+  write: yes
+  copy: no
+  move: yes
+  autotag: yes
+  quiet: yes
+  singletons: yes
+  incremental: no
+  quiet_fallback: asis
+  none_rec_action: asis
+  resume: yes
+  from_filename: no
+  from_scratch: yes
+  ignore_data: yes
+
+paths:
+  default: $albumartist/$album/$title
+  singleton: $artist/$album/$title
+  comp: Compilations/$album/$title
+
+acoustid:
+  apikey: YOUR_ACOUSTID_API_KEY_HERE
+
+chroma:
+  auto: yes
+
+item_fields:
+  album: "album if album else 'Singles'"
+
+lyrics:
+  auto: yes
+  sources: lrclib
+  synced: yes
+  fallback: ''
+
+fetchart:
+  auto: yes
+  fetch_for_asis: yes
+  sources:
+    - coverart
+    - itunes
+    - amazon
+    - filesystem
+  minwidth: 500
+  maxwidth: 1200
+  store_source: no
+  enforce_ratio: yes
+
+embedart:
+  auto: yes
+  if_art_found: yes
+  ifunset: no
+  remove_art_file: yes
+
+ftintitle:
+  auto: yes
+
+scrub:
+  auto: yes
+
+musicbrainz:
+  searchlimit: 5
+
+match:
+  strong_rec_thresh: 0.30
+  strong_rec_confidence: 0.80
+  medium_rec_thresh: 0.50
+  max_rec:
+    missing_tracks: medium
+    unmatched_tracks: medium
+  preferred:
+    countries: ['JP', 'US', 'XW']
+    media: ['CD', 'Digital Media']
+    release_types: ['album', 'single', 'ep']
+  distance_weights:
+    track: 0.0
+    artist: 0.0
+    title: 0.0
+    chroma: 1.0
+    source: 0.0
+    album: 0.0
+    media: 0.0
+    medium: 0.0
+    year: 0.0
+    country: 0.0
+    tracks: 0.0
+    track_index: 0.0

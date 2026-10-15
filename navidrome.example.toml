@@ -1,0 +1,12 @@
+# Navidrome Example Configuration File
+# Rename or copy to navidrome.toml and customize paths
+
+MusicFolder = "/path/to/your/music/library"
+DataFolder = "/path/to/navidrome/data"
+Port = "4533"
+Address = "0.0.0.0"
+LogLevel = "info"
+Scanner.Schedule = "@every 1h"
+CoverArtPriority = "cover.*, folder.*, front.*"
+EnableTranscodingConfig = true
+SessionTimeout = "24h"
